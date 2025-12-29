@@ -1,24 +1,24 @@
 # easy-sc
 
-一个小工具扩展：在 VS Code 的文件 Explorer 里，右键 bash 脚本，一键执行 `qsub`。
+A small utility extension: right-click a Bash script in VS Code Explorer and submit it with `qsub` in one click.
 
-## 功能
+## Features
 
-- 在 Explorer 里右键 `.sh` / `.bash`（或语言模式为 `shellscript`）文件时，菜单中出现 `qsub`
-- 点击后会在 VS Code 集成终端执行：`qsub <文件绝对路径>`
+- Adds a `qsub` entry to the Explorer context menu for `.sh` / `.bash` files (or when the language mode is `shellscript`)
+- On click, runs: `qsub <absolute-file-path>` in the VS Code integrated terminal
 
-## 使用方法
+## Usage
 
-1. 在文件 Explorer 中选中一个 bash 脚本（例如 `job.sh`）
-2. 右键 → `qsub`
-3. 会打开一个名为 `qsub` 的集成终端并执行提交命令
+1. In the Explorer, select a Bash script (e.g. `job.sh`)
+2. Right-click → `qsub`
+3. A terminal named `qsub` opens and executes the submission command
 
-## 依赖/要求
+## Requirements
 
-- 系统环境中需要存在 `qsub` 命令（可在终端直接运行 `qsub`）
+- `qsub` must be available in your environment (i.e. `qsub` works in your terminal)
 
 ## Release Notes
 
 ### 0.0.1
 
-- 初始版本：Explorer 右键 `qsub` 提交脚本
+- Initial release: Explorer context menu `qsub` to submit scripts
