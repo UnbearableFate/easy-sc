@@ -1,24 +1,26 @@
 # easy-sc
 
-A small utility extension: right-click a Bash script in VS Code Explorer and submit it with `qsub` in one click.
+`easy-sc` is a VS Code extension focused on providing convenient job management workflows for PBS-based HPC (supercomputer) users.
 
-## Features
+## Current Features
 
-- Adds a `qsub` entry to the Explorer context menu for `.sh` / `.bash` files (or when the language mode is `shellscript`)
-- On click, runs: `qsub <absolute-file-path>` in the VS Code integrated terminal
+### Easy `qsub` from the File Explorer
 
-## Usage
-
-1. In the Explorer, select a Bash script (e.g. `job.sh`)
-2. Right-click → `qsub`
-3. A terminal named `qsub` opens and executes the submission command
+- Right-click a Bash script in the VS Code Explorer and choose `qsub` to submit it.
+- Supports single selection and multi-selection. When multiple scripts are selected, it submits them sequentially in one line (e.g. `qsub "file1" && qsub "file2"`).
+- Submissions are executed in the VS Code integrated terminal (a terminal named `qsub` will be opened).
 
 ## Requirements
 
-- `qsub` must be available in your environment (i.e. `qsub` works in your terminal)
+- `qsub` must be available in your environment (i.e. `qsub` works in your terminal/session on the target machine).
+- Applies to `.sh` / `.bash` files (or when the language mode is `shellscript`).
 
 ## Release Notes
 
 ### 0.0.1
 
-- Initial release: Explorer context menu `qsub` to submit scripts
+- Initial release: Explorer context menu `qsub` for quick submission
+
+## Build from Source and Contribution
+
+Please reference [vscode official doc](https://code.visualstudio.com/api/get-started/your-first-extension)
