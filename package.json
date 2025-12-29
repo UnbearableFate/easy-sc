@@ -1,0 +1,55 @@
+{
+  "name": "easy-sc",
+  "displayName": "easy-sc",
+  "description": "make mibyabi queue easy",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.107.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:easy-sc.helloWorld",
+    "onCommand:easy-sc.qsub"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "easy-sc.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "easy-sc.qsub",
+        "title": "qsub"
+      }
+    ],
+	    "menus": {
+	      "explorer/context": [
+        {
+          "command": "easy-sc.qsub",
+          "when": "resourceLangId == shellscript || resourceExtname == .sh || resourceExtname == .bash"
+        }
+      ]
+    }
+  },
+	  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.107.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.48.1",
+    "eslint": "^9.39.1",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
